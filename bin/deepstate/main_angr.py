@@ -154,6 +154,7 @@ class IsSymbolicUInt(angr.SimProcedure):
 class Assume(angr.SimProcedure):
   """Implements _DeepState_Assume, which tries to inject a constraint."""
   def run(self, arg, expr_ea, file_ea, line):
+    print "EXPR_EA:", type(expr_ea), expr_ea
     DeepAngr(procedure=self).api_assume(arg, expr_ea, file_ea, line)
 
 
